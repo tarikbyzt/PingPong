@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
 {
     public static Ball Current;
     public GameObject[] balls;
+    public GameObject ballOutParent;
     public GameObject ballParent;
     [SerializeField] float touchSpeed;
     public int ballCount;
@@ -27,9 +28,9 @@ public class Ball : MonoBehaviour
 
     private void Start()
     {
-        
-        
 
+
+        
         
         
         Current = this;
@@ -47,6 +48,11 @@ public class Ball : MonoBehaviour
     }
     private void Update()
     {
+        
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    ballInMachine[0].transform.SetParent;
+        //}
         ballCount = ballInMachine.Count;
         Debug.Log(ballCount);
         if (Input.touchCount > 0 )

@@ -24,18 +24,14 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
-        bool deadBall = ObsDryer.Current.deadBall;
+       
+        
         startPosY = transform.position;
         endPosY = new Vector3(transform.position.x, transform.position.y + ObsDryer.Current.deadBallPos, transform.position.z);
-        if ( deadBall)
-        {
-            //transform.position.y > ObsDryer.Current.deadBallPos
-            Debug.Log("top aþaðýya iniyor");
-            // transform.localPosition = Vector3.Lerp(startPosY, endPosY, 0.1f);
-            transform.DOLocalMoveY(0.5f, 0);
-            ObsDryer.Current.deadBall = false;
-        }
+        
     }
+
+    
 
     void FixedUpdate()
     {
