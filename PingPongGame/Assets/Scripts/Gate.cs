@@ -18,7 +18,7 @@ public class Gate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Ball"))
+        if (other.gameObject.tag=="Ball")
         {
             Ball.Current.BallPull();
 

@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
     public int ballCount;
     public List<GameObject> ballList;
     public List<GameObject> ballInMachine;
-    
+
 
 
 
@@ -36,7 +36,7 @@ public class Ball : MonoBehaviour
 
         Current = this;
         ballInMachine.Add(ballList[0]);
-        //StartCoroutine(Wait());
+        StartCoroutine(Wait());
 
 
 
@@ -49,22 +49,42 @@ public class Ball : MonoBehaviour
     }
     private void Update()
     {
+        ballCount = ballInMachine.Count;
+        Debug.Log(ballCount);
+        if (Input.touchCount > 0)
+        {
+            Touch first = Input.GetTouch(0);
+            if (first.phase == TouchPhase.Stationary)
+            {
+                Vector3 ballPosition = new Vector3(ballParent.transform.position.x, ballParent.transform.position.y + touchSpeed * Time.deltaTime, ballParent.transform.position.z);
+                ballParent.transform.position = ballPosition;
+
+                Debug.Log("yukarý çýkýyor");
+            }
+        }
+        else if (ballParent.transform.localPosition.y > 1.91f)
+        {
+            Vector3 ballPosition = new Vector3(ballParent.transform.position.x, ballParent.transform.position.y - touchSpeed * Time.deltaTime, ballParent.transform.position.z);
+            ballParent.transform.position = ballPosition;
+        }
+
+        
 
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    ballInMachine[0].transform.SetParent;
         //}
-        ballCount = ballInMachine.Count;
-        if (Input.touchCount > 0)
-        {
-             StartCoroutine(BallUp());
+        
+        //if (Input.touchCount > 0)
+        //{
+        //     StartCoroutine(BallUp());
 
-        }
-        if (Input.touchCount == 0 && ballInMachine[0].transform.localPosition.y > 1)
-        {
-            StartCoroutine(BallDown());
-        }
-        Debug.Log(ballCount);
+        //}
+        //if (Input.touchCount == 0 && ballInMachine[0].transform.localPosition.y > 1)
+        //{
+        //    StartCoroutine(BallDown());
+        //}
+        
         //StartCoroutine(BallMovement());
 
 
@@ -78,8 +98,8 @@ public class Ball : MonoBehaviour
         ballInMachine.Add(ballList[0]);
         StartCoroutine(Wait());
 
-        
-        ballInMachine[ballCount].transform.localPosition =  new Vector3(0,ballInMachine[ballCount-1].transform.localPosition.y + 0.5f, 0);
+
+        ballInMachine[ballCount].transform.localPosition = new Vector3(0, ballInMachine[ballCount - 1].transform.localPosition.y + 0.5f, 0);
 
     }
 
@@ -94,85 +114,13 @@ public class Ball : MonoBehaviour
         ballList.RemoveAt(0);
 
     }
-    IEnumerator BallUp()
-    {
-        for (int i = 0; i < ballCount; i++)
-        {
-
-            ballInMachine[i].transform.localPosition = new Vector3(0, ballInMachine[i].transform.localPosition.y + 0.062f*Time.deltaTime, 0);
-            yield return new WaitForSeconds(0.1f);
-        }
-
-    }
-
-    IEnumerator BallDown()
-    {
-        for (int i = ballCount-1; i >= 0; i--)
-        {
-
-            ballInMachine[i].transform.localPosition = new Vector3(0, ballInMachine[i].transform.localPosition.y - 0.062f*Time.deltaTime, 0);
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-    IEnumerator BallMovement()
-    {
-
-        if (Input.touchCount > 0)
-        {
-            for (int j = 0; j < 1; j++)
-            {
-                for (int i = 0; i < ballCount; i++)
-                {
-                    
-                    
-                    yield return new WaitForSeconds(0.1f);
-                    Debug.Log("yukarý çýkýyor");
-                }
-            }
-
-
-        }
-
-        else if (Input.touchCount == 0 && ballInMachine[0].transform.localPosition.y > 1)
-        {
-            for (int i = ballCount - 1; i >= 0; i--)
-            {
-                Vector3 ballPosition = new Vector3(ballInMachine[i].transform.localPosition.x, ballInMachine[i].transform.localPosition.y - touchSpeed * Time.deltaTime, ballInMachine[i].transform.localPosition.z);
-                ballInMachine[i].transform.localPosition = ballPosition;
-                yield return new WaitForSeconds(0.1f);
-                Debug.Log("aþaðý iniyor");
-            }
-            //Vector3 ballPosition = new Vector3(ballInMachine[0].transform.localPosition.x, ballInMachine[0].transform.localPosition.y - touchSpeed * Time.deltaTime, ballInMachine[0].transform.localPosition.z);
-            //ballInMachine[0].transform.localPosition = ballPosition;
-
-            //for (int i = 0; i < ballCount; i++)
-            //{
-            //    if (i>0)
-            //    {
-            //        Vector3 targetPosition = new Vector3(ballInMachine[i - 1].transform.localPosition.x, ballInMachine[i - 1].transform.localPosition.y - 0.5f, ballInMachine[i - 1].transform.localPosition.z);
-            //        ballInMachine[i].transform.localPosition = Vector3.Lerp(ballInMachine[i].transform.localPosition, targetPosition, lerpValue);
-            //    }
-
-
-            //    yield return new WaitForSeconds(0.1f);
-            //}
-        }
 
 
 
-        //for (int j = 0; j < ballCount; j++)
-        //{
-        //    if (Input.touchCount == 0 && ballInMachine[0].transform.position.y > 1)
-        //    {
-        //        Vector3 ballPosition = new Vector3(ballParent.transform.position.x, ballParent.transform.position.y - touchSpeed * Time.deltaTime, ballParent.transform.position.z);
-        //        ballInMachine[j].transform.position = ballPosition;
-        //    }
 
 
-        //    yield return new WaitForSeconds(0.1f);
-        //}
 
-    }
+
 
 
 

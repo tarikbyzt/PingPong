@@ -24,8 +24,8 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
-        
-        
+       
+
         startPosY = transform.position;
         endPosY = new Vector3(transform.position.x, transform.position.y + ObsDryer.Current.deadBallPos, transform.position.z);
         
