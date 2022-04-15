@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ObstacleBox : MonoBehaviour
 {
-    [SerializeField] float startValue = 0, endValue = 100, currentValue=0;
-    [SerializeField] [Range(3.23f, 5.76f)] private float lerpValue=3.23f ;
-    public BoxCollider coll;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private SkinnedMeshRenderer gloveMesh;
+    [SerializeField] private Transform startTransform = null, endTransform = null;
+    [SerializeField] [Range(0f, 1f)] private float lerpValue;
+    float blendWeight;
+
 
     // Update is called once per frame
     void Update()
     {
-        currentValue =Mathf.Lerp(startValue, endValue, lerpValue);
+        blendWeight = gloveMesh.GetBlendShapeWeight(0);
+        lerpValue = 1 - (blendWeight / 100);
+        Debug.Log("Lerp Value= " + lerpValue);
+        transform.position = Vector3.Lerp(startTransform.position, endTransform.position, lerpValue);
     }
 }
