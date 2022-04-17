@@ -39,21 +39,11 @@ public class BallController : MonoBehaviour
 
         if (inWindZone == true)
         {
-
+            
             Debug.Log("space");
             rb.AddForce(Vector3.right * 20);
 
         }
-
-        if (racket == true)
-        {
-
-            Debug.Log("space");
-            rb.AddForce(Vector3.left * 20);
-            rb.AddForce(Vector3.back * 20);
-        }
-
-
 
     }
 
@@ -62,6 +52,7 @@ public class BallController : MonoBehaviour
 
         if (coll.gameObject.tag == "obsDryer")
         {
+            gameObject.GetComponent<Animator>().enabled = false;
             StartCoroutine(Timer());
             rb.isKinematic = false;
             inWindZone = true;

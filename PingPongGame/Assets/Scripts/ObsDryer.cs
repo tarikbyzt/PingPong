@@ -41,6 +41,7 @@ public class ObsDryer : MonoBehaviour
         //    // transform.localPosition = Vector3.Lerp(startPosY, endPosY, 0.1f);
 
         //}
+        Debug.Log("Deadball index= "+deadBallIndex);
         for (int i = deadBallIndex; i < Ball.Current.ballInMachine.Count; i++)
         {
             topBallPos = Ball.Current.ballInMachine[i].transform.localPosition.y;

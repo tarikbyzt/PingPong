@@ -19,9 +19,11 @@ public class FinishScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        for (int i = Ball.Current.ballCount - 1; i >= 0; i--)
+        if (other.gameObject.CompareTag("Ball"))
         {
-            Ball.Current.ballInMachine[i].transform.DOLocalMove(new Vector3(-3.273f, -2.77f, -7.616f),1 );
+            gameObject.GetComponent<Collider>().enabled = false;
+            Debug.Log("finish");
+            Ball.Current.finished = true;
         }
     }
 }

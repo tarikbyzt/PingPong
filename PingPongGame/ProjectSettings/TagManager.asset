@@ -22,6 +22,7 @@ TagManager:
   - Ball10
   - Ball11
   - Balls
+  - Machine
   layers:
   - Default
   - TransparentFX
