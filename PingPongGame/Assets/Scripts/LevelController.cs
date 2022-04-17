@@ -28,8 +28,8 @@ public class LevelController : MonoBehaviour
     {
         Current = this;
         currentLevel = PlayerPrefs.GetInt("currentLevel");
-        currentLevelText.text = (currentLevel + 1).ToString();
-        nextLevelText.text = (currentLevel + 2).ToString();
+        //currentLevelText.text = (currentLevel + 1).ToString();
+        //nextLevelText.text = (currentLevel + 2).ToString();
         Debug.Log("else");
 
         Debug.Log("dfsdfsd");
@@ -45,7 +45,7 @@ public class LevelController : MonoBehaviour
         ////= 110 - ScaleScript.Current.bodySkinnedMeshRenderer.GetBlendShapeWeight(0);
 
 
-        scoreText.text = score.ToString();
+        //scoreText.text = score.ToString();
     }
 
     public void StartLevel()
@@ -69,20 +69,18 @@ public class LevelController : MonoBehaviour
     public void LoadNextLevel()
     {
         SceneManager.LoadScene("Level " + (currentLevel + 1));
-        if (currentLevel==2)
+
+        if (currentLevel == 2)
         {
-            PlayerPrefs.DeleteAll();
+
+            PlayerPrefs.SetInt("currentLevel", currentLevel - 2);
             SceneManager.LoadScene("Level 0");
         }
-        //LevelLoader.Current.ChangeLevel("Level " + (currentLevel + 1));
 
     }
 
     public void GameOver()
     {
-
-        //üzülme animasyonu
-        //System.Threading.Thread.Sleep(5000);
         gameMenu.SetActive(false);
         gameOverMenu.SetActive(true);
         gameActive = false;
@@ -92,7 +90,7 @@ public class LevelController : MonoBehaviour
     {
 
         PlayerPrefs.SetInt("currentLevel", currentLevel + 1);
-        finishScoreText.text = score.ToString();
+        //finishScoreText.text = score.ToString();
         gameMenu.SetActive(false);
         finishMenu.SetActive(true);
         gameActive = false;

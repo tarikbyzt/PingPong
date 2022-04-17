@@ -10,7 +10,8 @@ public class ObsDryer : MonoBehaviour
     public int deadBallIndex;
     Vector3 startPosY, endPosY;
     GameObject deadBall;
-    float topBallPos;
+    public float topBallPos;
+
 
 
     // Start is called before the first frame update
@@ -46,7 +47,7 @@ public class ObsDryer : MonoBehaviour
         {
             topBallPos = Ball.Current.ballInMachine[i].transform.localPosition.y;
             Ball.Current.ballInMachine[i].transform.DOLocalMoveY(topBallPos-0.5f, 1);
-            Debug.Log("For döngü inme"+i);
+            Debug.Log("For döngü inme" + i);
         }
         
         Ball.Current.ballInMachine.Remove(deadBall);
@@ -54,7 +55,7 @@ public class ObsDryer : MonoBehaviour
         deadBallPos = other.transform.localPosition.y;
         other.transform.parent = Ball.Current.ballOutParent.transform;
         gameObject.GetComponent<Collider>().enabled = false;
-        
+
     }
-    
+
 }

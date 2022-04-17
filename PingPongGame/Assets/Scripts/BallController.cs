@@ -58,19 +58,6 @@ public class BallController : MonoBehaviour
             inWindZone = true;
         }
 
-        if (coll.gameObject.tag == "obsRacket")
-        {
-            rb.isKinematic = false;
-            racket = true;
-        }
-
-
-        if (coll.gameObject.CompareTag("PositiveGate"))
-        {
-            Debug.Log("Top Geldi");
-
-        }
-
     }
 
     /*
