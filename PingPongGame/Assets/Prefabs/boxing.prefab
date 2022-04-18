@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2991091816729854379}
   m_Layer: 0
   m_Name: boxing
-  m_TagString: obsDryer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2685016162699472471}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.10211277, y: 3.3, z: -364.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -85,7 +85,7 @@ SkinnedMeshRenderer:
   - 0
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.09810874, y: -0.1473268, z: 3.437935}
+    m_Center: {x: -0.13, y: -0.1473268, z: 3.437935}
     m_Extent: {x: 0.9356774, y: 0.4452894, z: 3.4380615}
   m_DirtyAABB: 0
 --- !u!95 &2991091816729854379
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 2991091816800834777}
   m_Layer: 0
   m_Name: coll
-  m_TagString: Untagged
+  m_TagString: obsDryer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2991091816800834779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000009536743, y: -0.00000023841858, z: 6.350002}
+  m_LocalPosition: {x: -0.0000009536743, y: -0.0000009536743, z: 6.3500023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3317120297660986605}
@@ -279,8 +279,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.35725498, z: 1}
-  m_Center: {x: 0, y: -0.15498257, z: 0}
+  m_Size: {x: 1, y: 0.35725498, z: 3.7147472}
+  m_Center: {x: -0.01, y: -0.15498257, z: -1.3093306}
 --- !u!114 &2991091816800834777
 MonoBehaviour:
   m_ObjectHideFlags: 0

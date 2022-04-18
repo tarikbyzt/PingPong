@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857793259036896911}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1.91, z: -0.527}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8932497099776548530}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &857793259036896909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 857793259479112184}
   - component: {fileID: 857793259479112185}
   - component: {fileID: 1776259140}
+  - component: {fileID: 673240760}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -70,13 +71,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857793259479112186}
-  m_LocalRotation: {x: 0.037883606, y: 0.9399234, z: -0.11107262, w: 0.32058024}
-  m_LocalPosition: {x: -14.43, y: 9.34, z: 15.6}
+  m_LocalRotation: {x: 0.022111597, y: 0.95245874, z: -0.07129909, w: 0.29538095}
+  m_LocalPosition: {x: -12.38, y: 9.34, z: 16.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8932497099776548530}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 13.479, y: 142.334, z: 0}
+  m_LocalEulerAnglesHint: {x: 8.562, y: 145.54, z: 0}
 --- !u!20 &857793259479112184
 Camera:
   m_ObjectHideFlags: 0
@@ -188,6 +189,25 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!95 &673240760
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857793259479112186}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bac3cb629f81b04b9a3ae2c059401a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &857793259707752652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,9 +1511,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0.08627451}
-        key1: {r: 1, g: 1, b: 1, a: 0.05882353}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 0.039215688}
+        key1: {r: 1, g: 1, b: 1, a: 0.09803922}
+        key2: {r: 0, g: 0, b: 0, a: 0.13725491}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1507,9 +1527,9 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 386
-        atime1: 65535
-        atime2: 0
+        atime0: 0
+        atime1: 47802
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -1517,7 +1537,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5003,11 +5023,10 @@ GameObject:
   - component: {fileID: 8932497099776548530}
   - component: {fileID: 6766213150695947865}
   - component: {fileID: 3991818048125901523}
-  - component: {fileID: 4394819698504136556}
   - component: {fileID: 4394819698504136547}
   m_Layer: 0
   m_Name: machine
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5078,19 +5097,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4394819698504136556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4394819698504136557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af218292e7d90a441b4efa1ec8628b7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
 --- !u!65 &4394819698504136547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5102,5 +5108,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3182653, y: 1.3921843, z: 4.326587}
-  m_Center: {x: 0.000023245755, y: -0.6109195, z: -0.015817521}
+  m_Size: {x: 1.3182653, y: 1.3921843, z: 3.3401947}
+  m_Center: {x: 0.000023245811, y: -0.6109195, z: 0.47737885}
